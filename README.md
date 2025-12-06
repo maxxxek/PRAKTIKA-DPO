@@ -1,6 +1,7 @@
-git add .
-git commit -m "feat: initialize project structure"
+# Мой первый проект
 
-git remote add origin "https://github.com/maxxxek/PRAKTIKA-DPO.git"
-git branch -M main
-git push -u origin main
+## Проект
+Этот репозиторий является каркасом для будущего веб-приложения.
+
+## Ссылки
+- [Публичная страница на GitHub Pages](https://maxxxek.github.io/PRAKTIKA-DPO/)
