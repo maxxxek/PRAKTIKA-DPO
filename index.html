@@ -1,47 +1,208 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AXY:STORE</title>
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <title>AXY PRACTICE</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 </head>
 <body>
-    <header>
-        <h1>Welcome to a AXYs site!</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Главная</a></li>
-                <li><a href="#about">О проекте</a></li>
-                <li><a href="#contact">Контакты</a></li>
-            </ul>
-        </nav>
+
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="assets/icons/Logo.png" alt="Логотип_Furniture_Brand">
+            </a>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#">Продукция</a></li>
+                    <li><a href="#">О нас</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#"><img src="assets/icons/Search.png" alt="Поиск"></a>
+                <a href="#"><img src="assets/icons/Shopping--cart.png" alt="Корзина"></a>
+                <a href="#"><img src="assets/icons/User--avatar.png" alt="Личный кабинет"></a>
+            </div>
+        </div>
     </header>
 
     <main>
-        <section id="home">
-            <h2>Недавние релизы</h2>
-            <p>Пока в разработке)))</p>
+
+        <section class="hero">
+            <div class="container">
+                <h1>The furniture brand for the future, with timeless designs</h1>
+                <p class="intro">
+                    A new and more beautiful furniture with durable and flexible inner work brand can be seen to showcase a beautiful home design in our digital world to deliver new technologies.
+                </p>
+                <a href="#" class="button">View collection</a>
+                <img src="assets/img/Image.png" alt="Мебель_в_интерьере" class="hero-image">
+            </div>
         </section>
 
-        <section id="about">
-            <h2>О проекте</h2>
-            <p>Цель: создать крутой сайт для крутого исполнителя</p>
-            <ul>
-                <li>Чтобы были тачки</li>
-                <li>А так же деньги</li>
-                <li>И естесственно Зачет по фронтенд и бэкенд разработке!</li>
-            </ul>
+
+        <section class="features">
+            <div class="container">
+                <h2>What makes our brand different?</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <img src="assets/icons/Delivery.png" alt="Быстрая_доставка">
+                        <h3>Next day as standard</h3>
+                        <p>Order before 3pm and get your order the next day as standard</p>
+                    </div>
+                    <div class="feature">
+                        <img src="assets/icons/Checkmark--outline.png" alt="Гарантия_качества">
+                        <h3>Made by true artisans</h3>
+                        <p>Handmade crafted goods made with real passion and craftmanship</p>
+                    </div>
+                    <div class="feature">
+                        <img src="assets/icons/Purchase.png" alt="Покупка">
+                        <h3>Unbeatable prices</h3>
+                        <p>For our materials and quality you won't find better prices anywhere</p>
+                    </div>
+                    <div class="feature">
+                        <img src="assets/icons/Sprout.png" alt="Экологичность">
+                        <h3>Recycled packaging</h3>
+                        <p>We use 100% recycled packaging to ensure our footprint is manageable</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section id="contact">
-            <h2>Контакты</h2>
-            <p>Email: maxxxek@vk.com</p>
+        <section class="new-ceramics">
+            <div class="container">
+                <h2>New ceramics</h2>
+                <div class="products-grid">
+                    <article class="product">
+                        <img src="assets/img/Photo.png" alt="Стул_The_Dandy">
+                        <h3>The Dandy chair</h3>
+                        <p>£250</p>
+                    </article>
+                    <article class="product">
+                        <img src="assets/img/Photo-(1).png" alt="Стул_Rustic_Vase">
+                        <h3>Rustic Vase Set</h3>
+                        <p>£155</p>
+                    </article>
+                    <article class="product">
+                        <img src="assets/img/Photo-(2).png" alt="Ваза_The_Silky_Vase">
+                        <h3>The Silky Vase</h3>
+                        <p>£125</p>
+                    </article>
+                    <article class="product">
+                        <img src="assets/img/Photo-(3).png" alt="Лампа_The_Lucy_Lamp">
+                        <h3>The Lucy Lamp</h3>
+                        <p>£399</p>
+                    </article>
+                </div>
+                <a href="#" class="view-all">View collection</a>
+            </div>
         </section>
+
+        <section class="popular-products">
+            <div class="container">
+                <h2>Our popular products</h2>
+                <div class="products-grid">
+                    <article class="product large">
+                        <img src="assets/img/Large.png" alt="Большой_диван_The_Poplar_suede_sofa">
+                        <h3>The Poplar suede sofa</h3>
+                        <p>£980</p>
+                    </article>
+                    <article class="product">
+                        <img src="assets/img/Photo-(1).png" alt="Стул_The_Dandy">
+                        <h3>The Dandy chair</h3>
+                        <p>£250</p>
+                    </article>
+                    <article class="product">
+                        <img src="assets/img/Photo-(2).png" alt="Стул_Rustic_Vase_Set">
+                        <h3>Rustic Vase Set</h3>
+                        <p>£155</p>
+                    </article>
+                </div>
+                <a href="#" class="view-all">View collection</a>
+            </div>
+        </section>
+
+        <section class="club">
+            <div class="container">
+                <h2>Join the club and get the benefits</h2>
+                <p>Sign up for our newsletter and receive exclusive offers on new ranges, sales, pop up stores and more</p>
+                <form class="signup-form">
+                    <input type="email" placeholder="yourcool@email.com" required>
+                    <button type="submit">Sign up</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <h2>From a studio in London to a global brand with over 400 outlets</h2>
+                    <p>When we started Avion, the idea was simple. Make high quality furniture affordable and available for the mass market.</p>
+                    <p>Handmade, and lovingly crafted furniture and homeware is what we live, breathe and design so our Chelsea boutique become the hotbed for the London interior design community.</p>
+                    <a href="#" class="button">Get in touch</a>
+                </div>
+                <div class="about-image">
+                    <img src="assets/img/Right-Image.png" alt="Интерьер_нашего_магазина">
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer>
-        <p>© 2025 THE COOL PRACTICE</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="#">New arrivals</a></li>
+                        <li><a href="#">Best sellers</a></li>
+                        <li><a href="#">Recently viewed</a></li>
+                        <li><a href="#">Popular this week</a></li>
+                        <li><a href="#">All products</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Crockery</a></li>
+                        <li><a href="#">Furniture</a></li>
+                        <li><a href="#">Homeware</a></li>
+                        <li><a href="#">Plant pots</a></li>
+                        <li><a href="#">Chairs</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Our company</h3>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Vacancies</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Returns policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column newsletter">
+                    <h3>Join our mailing list</h3>
+                    <form class="footer-signup">
+                        <input type="email" placeholder="yourcool@email.com" required>
+                        <button type="submit">Sign up</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">Copyright 2022 Avion LTD</p>
+                <div class="social-links">
+                    <a href="#"><img src="assets/icons/Logo--linkedin.png" alt="LinkedIn"></a>
+                    <a href="#"><img src="assets/icons/Logo--pinterest.png" alt="Pinterest"></a>
+                    <a href="#"><img src="assets/icons/Logo--skype.png" alt="Skype"></a>
+                </div>
+            </div>
+        </div>
     </footer>
+
 </body>
 </html>
