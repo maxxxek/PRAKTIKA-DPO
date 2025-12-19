@@ -1,0 +1,711 @@
+/* ===== styles/style.css ===== */
+/* Полная версия стилей с БЭМ-методологией */
+
+/* ===== Шаг 1: Сброс стилей ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== Шаг 2: Подключение шрифтов ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ===== CSS-переменные ===== */
+:root {
+    --primary-color: #2c5530;
+    --primary-dark: #1e3a22;
+    --secondary-color: #4a7c59;
+    --text-dark: #333;
+    --text-light: #666;
+    --text-white: #fff;
+    --bg-white: #fff;
+    --bg-light: #f8f9fa;
+    --bg-dark: #333;
+    --border-color: #eaeaea;
+    --border-dark: #444;
+    --shadow: 0 10px 20px rgba(0,0,0,0.1);
+    --shadow-light: 0 5px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+    --radius: 4px;
+    --radius-lg: 8px;
+}
+
+/* ===== Базовые стили ===== */
+.page {
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    scroll-behavior: smooth;
+    animation: fadeIn 0.5s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== Анимации ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* ===== Шапка (Блок: header) ===== */
+.header {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Элемент логотипа */
+.logo__image {
+    height: 40px;
+    width: auto;
+    transition: var(--transition);
+}
+
+.logo__image:hover {
+    transform: scale(1.1);
+}
+
+/* Блок навигации */
+.nav__list {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.nav__link:hover {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.nav__link:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Модификатор активной ссылки */
+.nav__link--active {
+    color: var(--primary-color);
+    background-color: var(--bg-light);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Элементы иконок в шапке */
+.header-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.header-icons__link {
+    padding: 0.5rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.header-icons__link:hover {
+    background-color: var(--bg-light);
+    transform: scale(1.1);
+}
+
+.header-icons__icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* ===== Навигация по якорям ===== */
+.anchor-nav {
+    background-color: var(--primary-color);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.anchor-nav__list {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.anchor-nav__link {
+    color: var(--text-white);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.anchor-nav__link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ===== Герой секция (Блок: hero) ===== */
+.hero {
+    padding: 4rem 0;
+    background-color: var(--bg-light);
+    animation: fadeIn 0.8s ease;
+}
+
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    animation: slideUp 0.8s ease 0.2s both;
+}
+
+.hero__text {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    max-width: 600px;
+    animation: slideUp 0.8s ease 0.4s both;
+}
+
+.hero__button {
+    animation: slideUp 0.8s ease 0.6s both;
+}
+
+.hero__image {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 3rem;
+    align-self: center;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.hero__image:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== Кнопки (Блок: button) ===== */
+.button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-light);
+}
+
+.button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.button:active {
+    transform: translateY(-1px);
+}
+
+/* Модификатор вторичной кнопки */
+.button--secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.button--secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.button:disabled:hover {
+    background-color: #ccc;
+    transform: none;
+}
+
+/* ===== Особенности (Блок: features) ===== */
+.features {
+    padding: 4rem 0;
+}
+
+.features__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+}
+
+.features__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Блок фичи */
+.feature {
+    text-align: center;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-color);
+}
+
+.feature__icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+}
+
+.feature__title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.feature__text {
+    color: var(--text-light);
+}
+
+/* ===== Продукты (Блок: products) ===== */
+.products,
+.popular-products {
+    padding: 4rem 0;
+}
+
+.products__title,
+.popular-products__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+.products__grid,
+.popular-products__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Блок карточки продукта */
+.product-card {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-color);
+}
+
+/* Модификатор большой карточки */
+.product-card--large {
+    grid-column: span 2;
+}
+
+.product-card__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card__title {
+    padding: 1rem 1rem 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.product-card__price {
+    padding: 0 1rem 1rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* ===== Клуб (Блок: club) ===== */
+.club {
+    padding: 4rem 0;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    text-align: center;
+}
+
+.club__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.club__text {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+/* Блок формы */
+.club__form {
+    display: flex;
+    max-width: 400px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.form__input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form__input:focus {
+    outline: none;
+    border-color: var(--text-white);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.2);
+}
+
+.form__button {
+    white-space: nowrap;
+}
+
+/* ===== О компании (Блок: about) ===== */
+.about {
+    padding: 4rem 0;
+    background-color: var(--bg-light);
+}
+
+.about__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about__title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.about__text {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.about__button {
+    margin-top: 1rem;
+}
+
+.about__img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.about__img:hover {
+    transform: scale(1.02);
+}
+
+/* ===== Демо интерактивных элементов ===== */
+.interactive-demo {
+    padding: 4rem 0;
+    background-color: var(--bg-white);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.demo-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.interactive-card {
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    background-color: var(--bg-white);
+    border: 2px solid var(--border-color);
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+}
+
+.interactive-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-color);
+    animation: pulse 1s ease;
+}
+
+.highlight-card {
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    background-color: var(--bg-white);
+    border: 2px solid var(--border-color);
+    text-align: center;
+    transition: var(--transition);
+    width: 100%;
+    max-width: 300px;
+}
+
+.highlight-card:hover {
+    border-left: 6px solid var(--primary-color);
+    padding-left: 2.5rem;
+    background-color: var(--bg-light);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.card-text {
+    color: var(--text-light);
+}
+
+/* ===== Подвал (Блок: footer) ===== */
+.footer {
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    padding: 4rem 0 2rem;
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-column__title {
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-white);
+}
+
+.footer-column__list {
+    list-style: none;
+}
+
+.footer-column__item {
+    margin-bottom: 0.75rem;
+}
+
+.footer-column__link {
+    color: #ccc;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-column__link:hover {
+    color: var(--text-white);
+    padding-left: 0.5rem;
+}
+
+.footer-column--newsletter .form__input {
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-dark);
+}
+
+.footer__copyright {
+    color: #ccc;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--border-dark);
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.social-links__link:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.social-links__icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* ===== Медиа-запросы для адаптивности ===== */
+@media (max-width: 768px) {
+    .header__container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav__list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .hero__title {
+        font-size: 2rem;
+    }
+    
+    .about__container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .club__form {
+        flex-direction: column;
+    }
+    
+    .footer__bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .product-card--large {
+        grid-column: span 1;
+    }
+    
+    .anchor-nav__list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .footer__form {
+        flex-direction: column;
+    }
+    
+    .products__grid,
+    .popular-products__grid,
+    .features__grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* ===== Эффект для активного якоря ===== */
+:target {
+    animation: pulse 1s ease;
+    scroll-margin-top: 100px;
+}
+
+/* ===== Состояния доступности ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .page {
+        scroll-behavior: auto;
+    }
+}
+
+/* ===== Фокус для доступности ===== */
+*:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXY PRACTICE - БЭМ методология</title>
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body class="page">
+    <!-- Якоря для каждой секции -->
+    <span id="home-anchor" class="section-anchor"></span>
+    <header class="header">
+        <div class="container header__container">
+            <a href="#home-anchor" class="logo">
+                <img src="assets/icons/Logo.png" alt="Логотип Furniture Brand" class="logo__image">
+            </a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home-anchor" class="nav__link nav__link--active">Главная</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#features-anchor" class="nav__link">Преимущества</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#products-anchor" class="nav__link">Продукция</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact-anchor" class="nav__link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#search" class="header-icons__link">
+                    <img src="assets/icons/Search.png" alt="Поиск" class="header-icons__icon">
+                </a>
+                <a href="#cart" class="header-icons__link">
+                    <img src="assets/icons/Shopping--cart.png" alt="Корзина" class="header-icons__icon">
+                </a>
+                <a href="#profile" class="header-icons__link">
+                    <img src="assets/icons/User--avatar.png" alt="Личный кабинет" class="header-icons__icon">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Навигация по якорям -->
+    <nav class="anchor-nav">
+        <ul class="anchor-nav__list">
+            <li class="anchor-nav__item">
+                <a href="#home-anchor" class="anchor-nav__link">Главная</a>
+            </li>
+            <li class="anchor-nav__item">
+                <a href="#features-anchor" class="anchor-nav__link">Преимущества</a>
+            </li>
+            <li class="anchor-nav__item">
+                <a href="#products-anchor" class="anchor-nav__link">Продукция</a>
+            </li>
+            <li class="anchor-nav__item">
+                <a href="#popular-anchor" class="anchor-nav__link">Популярное</a>
+            </li>
+            <li class="anchor-nav__item">
+                <a href="#club-anchor" class="anchor-nav__link">Клуб</a>
+            </li>
+            <li class="anchor-nav__item">
+                <a href="#about-anchor" class="anchor-nav__link">О компании</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main">
+        <!-- Якорь для секции -->
+        <span id="home-anchor-2" class="section-anchor"></span>
+        <section class="hero" id="home">
+            <div class="container hero__container">
+                <h1 class="hero__title">The furniture brand for the future, with timeless designs</h1>
+                <p class="hero__text">
+                    A new and more beautiful furniture with durable and flexible inner work brand can be seen to showcase a beautiful home design in our digital world to deliver new technologies.
+                </p>
+                <a href="#products-anchor" class="button hero__button">View collection</a>
+                <img src="assets/img/Image.png" alt="Мебель в интерьере" class="hero__image">
+            </div>
+        </section>
+
+        <!-- Якорь для секции -->
+        <span id="features-anchor" class="section-anchor"></span>
+        <section class="features" id="features">
+            <div class="container features__container">
+                <h2 class="features__title">What makes our brand different?</h2>
+                <div class="features__grid">
+                    <div class="feature">
+                        <img src="assets/icons/Delivery.png" alt="Быстрая доставка" class="feature__icon">
+                        <h3 class="feature__title">Next day as standard</h3>
+                        <p class="feature__text">Order before 3pm and get your order the next day as standard</p>
+                    </div>
+                    <div class="feature">
+                        <img src="assets/icons/Checkmark--outline.png" alt="Гарантия качества" class="feature__icon">
+                        <h3 class="feature__title">Made by true artisans</h3>
+                        <p class="feature__text">Handmade crafted goods made with real passion and craftmanship</p>
+                    </div>
+                    <div class="feature">
+                        <img src="assets/icons/Purchase.png" alt="Покупка" class="feature__icon">
+                        <h3 class="feature__title">Unbeatable prices</h3>
+                        <p class="feature__text">For our materials and quality you won't find better prices anywhere</p>
+                    </div>
+                    <div class="feature">
+                        <img src="assets/icons/Sprout.png" alt="Экологичность" class="feature__icon">
+                        <h3 class="feature__title">Recycled packaging</h3>
+                        <p class="feature__text">We use 100% recycled packaging to ensure our footprint is manageable</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Якорь для секции -->
+        <span id="products-anchor" class="section-anchor"></span>
+        <section class="products" id="products">
+            <div class="container products__container">
+                <h2 class="products__title">New ceramics</h2>
+                <div class="products__grid">
+                    <article class="product-card">
+                        <img src="assets/img/Photo.png" alt="Стул The Dandy" class="product-card__image">
+                        <h3 class="product-card__title">The Dandy chair</h3>
+                        <p class="product-card__price">£250</p>
+                    </article>
+                    <article class="product-card">
+                        <img src="assets/img/Photo-(1).png" alt="Стул Rustic Vase" class="product-card__image">
+                        <h3 class="product-card__title">Rustic Vase Set</h3>
+                        <p class="product-card__price">£155</p>
+                    </article>
+                    <article class="product-card">
+                        <img src="assets/img/Photo-(2).png" alt="Ваза The Silky Vase" class="product-card__image">
+                        <h3 class="product-card__title">The Silky Vase</h3>
+                        <p class="product-card__price">£125</p>
+                    </article>
+                    <article class="product-card">
+                        <img src="assets/img/Photo-(3).png" alt="Лампа The Lucy Lamp" class="product-card__image">
+                        <h3 class="product-card__title">The Lucy Lamp</h3>
+                        <p class="product-card__price">£399</p>
+                    </article>
+                </div>
+                <a href="#popular-anchor" class="button button--secondary">View collection</a>
+            </div>
+        </section>
+
+        <!-- Якорь для секции -->
+        <span id="popular-anchor" class="section-anchor"></span>
+        <section class="popular-products" id="popular">
+            <div class="container popular-products__container">
+                <h2 class="popular-products__title">Our popular products</h2>
+                <div class="popular-products__grid">
+                    <article class="product-card product-card--large">
+                        <img src="assets/img/Large.png" alt="Большой диван The Poplar suede sofa" class="product-card__image">
+                        <h3 class="product-card__title">The Poplar suede sofa</h3>
+                        <p class="product-card__price">£980</p>
+                    </article>
+                    <article class="product-card">
+                        <img src="assets/img/Photo-(1).png" alt="Стул The Dandy" class="product-card__image">
+                        <h3 class="product-card__title">The Dandy chair</h3>
+                        <p class="product-card__price">£250</p>
+                    </article>
+                    <article class="product-card">
+                        <img src="assets/img/Photo-(2).png" alt="Стул Rustic Vase Set" class="product-card__image">
+                        <h3 class="product-card__title">Rustic Vase Set</h3>
+                        <p class="product-card__price">£155</p>
+                    </article>
+                </div>
+                <a href="#club-anchor" class="button button--secondary">View collection</a>
+            </div>
+        </section>
+
+        <!-- Якорь для секции -->
+        <span id="club-anchor" class="section-anchor"></span>
+        <section class="club" id="club">
+            <div class="container club__container">
+                <h2 class="club__title">Join the club and get the benefits</h2>
+                <p class="club__text">Sign up for our newsletter and receive exclusive offers on new ranges, sales, pop up stores and more</p>
+                <form class="form club__form">
+                    <input type="email" placeholder="yourcool@email.com" required class="form__input">
+                    <button type="submit" class="button form__button">Sign up</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Якорь для секции -->
+        <span id="about-anchor" class="section-anchor"></span>
+        <section class="about" id="about">
+            <div class="container about__container">
+                <div class="about__content">
+                    <h2 class="about__title">From a studio in London to a global brand with over 400 outlets</h2>
+                    <p class="about__text">When we started Avion, the idea was simple. Make high quality furniture affordable and available for the mass market.</p>
+                    <p class="about__text">Handmade, and lovingly crafted furniture and homeware is what we live, breathe and design so our Chelsea boutique become the hotbed for the London interior design community.</p>
+                    <a href="#contact-anchor" class="button about__button">Get in touch</a>
+                </div>
+                <div class="about__image">
+                    <img src="assets/img/Right-Image.png" alt="Интерьер нашего магазина" class="about__img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Демо интерактивных элементов -->
+        <section class="interactive-demo">
+            <div class="container">
+                <h2 class="demo-title">Интерактивные элементы для демонстрации</h2>
+                <div class="demo-grid">
+                    <button class="button">Обычная кнопка</button>
+                    <button class="button" disabled>Неактивная кнопка</button>
+                    <button class="button button--secondary">Вторичная кнопка</button>
+                    
+                    <div class="interactive-card">
+                        <h3 class="card-title">Интерактивная карточка</h3>
+                        <p class="card-text">Наведи курсор для эффекта</p>
+                    </div>
+                    
+                    <div class="highlight-card">
+                        <h3 class="card-title">Выделенный раздел</h3>
+                        <p class="card-text">При наведении появляется акцент</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Якорь для секции -->
+    <span id="contact-anchor" class="section-anchor"></span>
+    <footer class="footer" id="contact">
+        <div class="container footer__container">
+            <div class="footer__grid">
+                <div class="footer-column">
+                    <h3 class="footer-column__title">Menu</h3>
+                    <ul class="footer-column__list">
+                        <li class="footer-column__item">
+                            <a href="#home-anchor" class="footer-column__link">New arrivals</a>
+                        </li>
+                        <li class="footer-column__item">
+                            <a href="#products-anchor" class="footer-column__link">Best sellers</a>
+                        </li>
+                        <li class="footer-column__item">
+                            <a href="#about-anchor" class="footer-column__link">Recently viewed</a>
+                        </li>
+                        <li class="footer-column__item">
+                            <a href="#popular-anchor" class="footer-column__link">Popular this week</a>
+                        </li>
+                        <li class="footer-column__item">
+                            <a href="#products-anchor" class="footer-column__link">All products</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-column__title">Categories</h3>
+                    <ul class="footer-column__list">
+                        <li class="footer-column__item">
+                            <a href="#products-anchor" class="footer-column__link">Crockery</a>
+                        </li>
+                        <li class="footer-column__item">
+                            <a href="#products-anchor" class="footer-column__link">Furniture</a>
+                        </li>
+                        <li class="footer-column__item">
+                            <a href="#products-anchor" class="footer-column__link">Homeware</a>
+                        </li>
+                        <li class="footer-column__item">
+                            <a href="#products-anchor" class="footer-column__link">Plant pots</a>
+                        </li>
+                        <li class="footer-column__item">
+                            <a href="#products-anchor" class="footer-column__link">Chairs</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-column__title">Our company</h3>
+                    <ul class="footer-column__list">
+                        <li class="footer-column__item">
+                            <a href="#about-anchor" class="footer-column__link">About us</a>
+                        </li>
+                        <li class="footer-column__item">
+                            <a href="#contact-anchor" class="footer-column__link">Vacancies</a>
+                        </li>
+                        <li class="footer-column__item">
+                            <a href="#contact-anchor" class="footer-column__link">Contact us</a>
+                        </li>
+                        <li class="footer-column__item">
+                            <a href="#home-anchor" class="footer-column__link">Privacy</a>
+                        </li>
+                        <li class="footer-column__item">
+                            <a href="#home-anchor" class="footer-column__link">Returns policy</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-column--newsletter">
+                    <h3 class="footer-column__title">Join our mailing list</h3>
+                    <form class="form footer__form">
+                        <input type="email" placeholder="yourcool@email.com" required class="form__input">
+                        <button type="submit" class="button form__button">Sign up</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">Copyright 2022 Avion LTD</p>
+                <div class="social-links">
+                    <a href="#contact-anchor" class="social-links__link">
+                        <img src="assets/icons/Logo--linkedin.png" alt="LinkedIn" class="social-links__icon">
+                    </a>
+                    <a href="#contact-anchor" class="social-links__link">
+                        <img src="assets/icons/Logo--pinterest.png" alt="Pinterest" class="social-links__icon">
+                    </a>
+                    <a href="#contact-anchor" class="social-links__link">
+                        <img src="assets/icons/Logo--skype.png" alt="Skype" class="social-links__icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
