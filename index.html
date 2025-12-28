@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AXY PRACTICE - БЭМ методология</title>
+    <title>AXY PRACTICE - БЭМ методология и адаптивная верстка</title>
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body class="page">
     <!-- Якоря для каждой секции -->
@@ -27,6 +27,9 @@
                         <a href="#products-anchor" class="nav__link">Продукция</a>
                     </li>
                     <li class="nav__item">
+                        <a href="#masonry-anchor" class="nav__link">Материалы</a>
+                    </li>
+                    <li class="nav__item">
                         <a href="#contact-anchor" class="nav__link">Контакты</a>
                     </li>
                 </ul>
@@ -42,6 +45,11 @@
                     <img src="assets/icons/User--avatar.png" alt="Личный кабинет" class="header-icons__icon">
                 </a>
             </div>
+            <button class="menu-toggle" aria-label="Открыть меню">
+                <span class="menu-toggle__line"></span>
+                <span class="menu-toggle__line"></span>
+                <span class="menu-toggle__line"></span>
+            </button>
         </div>
     </header>
 
@@ -56,6 +64,9 @@
             </li>
             <li class="anchor-nav__item">
                 <a href="#products-anchor" class="anchor-nav__link">Продукция</a>
+            </li>
+            <li class="anchor-nav__item">
+                <a href="#masonry-anchor" class="anchor-nav__link">Материалы</a>
             </li>
             <li class="anchor-nav__item">
                 <a href="#popular-anchor" class="anchor-nav__link">Популярное</a>
@@ -141,6 +152,77 @@
                     </article>
                 </div>
                 <a href="#popular-anchor" class="button button--secondary">View collection</a>
+            </div>
+        </section>
+
+        <!-- ШАГ 4: Masonry-раскладка (новый раздел) -->
+        <span id="masonry-anchor" class="section-anchor"></span>
+        <section class="masonry-section" id="masonry">
+            <div class="container">
+                <h2 class="masonry-section__title">Материалы и идеи для интерьера</h2>
+                <p class="masonry-section__subtitle">Коллекция статей и материалов по дизайну интерьера</p>
+                <div class="masonry-grid">
+                    <article class="masonry-item masonry-item--short">
+                        <div class="masonry-item__content">
+                            <h3 class="masonry-item__title">Современные тренды в дизайне</h3>
+                            <p class="masonry-item__text">Краткий обзор актуальных тенденций в мебельном дизайне 2024 года.</p>
+                            <div class="masonry-item__meta">
+                                <span class="masonry-item__date">15.03.2024</span>
+                                <span class="masonry-item__category">Дизайн</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="masonry-item masonry-item--tall">
+                        <div class="masonry-item__content">
+                            <h3 class="masonry-item__title">Экологичные материалы в производстве мебели</h3>
+                            <p class="masonry-item__text">Развёрнутое исследование экологически чистых материалов, используемых в современном мебельном производстве. Включает анализ древесины из ответственных источников, переработанных металлов и инновационных тканей.</p>
+                            <div class="masonry-item__meta">
+                                <span class="masonry-item__date">10.03.2024</span>
+                                <span class="masonry-item__category">Экология</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="masonry-item">
+                        <div class="masonry-item__content">
+                            <h3 class="masonry-item__title">Как выбрать идеальный диван</h3>
+                            <p class="masonry-item__text">Руководство по выбору дивана для вашей гостиной. Рассматриваем размеры, материалы, механизмы трансформации и стили.</p>
+                            <div class="masonry-item__meta">
+                                <span class="masonry-item__date">05.03.2024</span>
+                                <span class="masonry-item__category">Советы</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="masonry-item masonry-item--very-tall">
+                        <div class="masonry-item__content">
+                            <h3 class="masonry-item__title">Полное руководство по уходу за деревянной мебелью</h3>
+                            <p class="masonry-item__text">Исчерпывающее руководство по сохранению красоты и долговечности вашей деревянной мебели. Включает разделы по ежедневному уходу, сезонному обслуживанию, реставрации мелких повреждений, защите от влаги и солнечных лучей, выбору правильных средств для чистки и полировки, а также советы по хранению в разных климатических условиях.</p>
+                            <div class="masonry-item__meta">
+                                <span class="masonry-item__date">28.02.2024</span>
+                                <span class="masonry-item__category">Уход</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="masonry-item masonry-item--short">
+                        <div class="masonry-item__content">
+                            <h3 class="masonry-item__title">История стула The Dandy</h3>
+                            <p class="masonry-item__text">Краткая история создания одного из наших самых популярных стульев.</p>
+                            <div class="masonry-item__meta">
+                                <span class="masonry-item__date">20.02.2024</span>
+                                <span class="masonry-item__category">История</span>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="masonry-item">
+                        <div class="masonry-item__content">
+                            <h3 class="masonry-item__title">Освещение в интерьере</h3>
+                            <p class="masonry-item__text">Как правильно использовать свет для создания уютной атмосферы в доме. Типы освещения, расположение светильников, выбор ламп.</p>
+                            <div class="masonry-item__meta">
+                                <span class="masonry-item__date">15.02.2024</span>
+                                <span class="masonry-item__category">Свет</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -312,5 +394,39 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Скрипт для адаптивного меню
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navList = document.querySelector('.nav__list');
+            
+            menuToggle.addEventListener('click', function() {
+                navList.classList.toggle('nav__list--mobile');
+                menuToggle.classList.toggle('menu-toggle--active');
+            });
+            
+            // Закрытие меню при клике на ссылку
+            const navLinks = document.querySelectorAll('.nav__link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (navList.classList.contains('nav__list--mobile')) {
+                        navList.classList.remove('nav__list--mobile');
+                        menuToggle.classList.remove('menu-toggle--active');
+                    }
+                });
+            });
+            
+            // Изменение цвета шапки при скролле
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('header--scrolled');
+                } else {
+                    header.classList.remove('header--scrolled');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
