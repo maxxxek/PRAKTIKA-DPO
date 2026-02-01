@@ -3,19 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AXY PRACTICE - БЭМ методология и адаптивная верстка</title>
+    <title>AXY PRACTICE - БЭМ методология и адаптивная верстка + Практика 5</title>
     <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    
+    <!-- Подключение шрифтов для практики 5 -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Основные стили -->
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 1024px)">
 </head>
 <body class="page">
     <!-- Якоря для каждой секции -->
     <span id="home-anchor" class="section-anchor"></span>
+    
+    <!-- === ШАПКА С АДАПТИВНЫМ МЕНЮ (практика 5) === -->
     <header class="header">
         <div class="container header__container">
             <a href="#home-anchor" class="logo">
                 <img src="assets/icons/Logo.png" alt="Логотип Furniture Brand" class="logo__image">
             </a>
-            <nav class="nav">
+            
+            <!-- Основная навигация (адаптивная) -->
+            <nav class="nav" id="mainNav">
                 <ul class="nav__list">
                     <li class="nav__item">
                         <a href="#home-anchor" class="nav__link nav__link--active">Главная</a>
@@ -34,6 +44,7 @@
                     </li>
                 </ul>
             </nav>
+            
             <div class="header-icons">
                 <a href="#search" class="header-icons__link">
                     <img src="assets/icons/Search.png" alt="Поиск" class="header-icons__icon">
@@ -45,7 +56,12 @@
                     <img src="assets/icons/User--avatar.png" alt="Личный кабинет" class="header-icons__icon">
                 </a>
             </div>
-            <button class="menu-toggle" aria-label="Открыть меню">
+            
+            <!-- Кнопка CTA (только для десктопа) - НОВОЕ для практики 5 -->
+            <button class="btn btn--primary header__cta">Заказать</button>
+            
+            <!-- Гамбургер-кнопка (практика 5) -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false">
                 <span class="menu-toggle__line"></span>
                 <span class="menu-toggle__line"></span>
                 <span class="menu-toggle__line"></span>
@@ -281,6 +297,46 @@
             </div>
         </section>
 
+        <!-- НОВАЯ СЕКЦИЯ: Демо элементов практики 5 -->
+        <section class="practice5-demo" id="practice5">
+            <div class="container">
+                <h2 class="practice5-title">Практика 5: Адаптивное меню Desktop → Tablet → Mobile</h2>
+                <p class="practice5-subtitle">Демонстрация выполнения требований практического задания</p>
+                
+                <div class="practice5-features">
+                    <div class="practice5-feature">
+                        <h3>✅ Адаптивное меню</h3>
+                        <p>На десктопе — горизонтальное меню, на планшетах/мобильных — гамбургер-меню</p>
+                    </div>
+                    <div class="practice5-feature">
+                        <h3>✅ Кнопка "Наверх"</h3>
+                        <p>Появляется при скролле >300px, плавно возвращает к началу страницы</p>
+                    </div>
+                    <div class="practice5-feature">
+                        <h3>✅ Touch-friendly</h3>
+                        <p>Все кликабельные элементы не менее 44×44px для удобного использования на сенсорных экранах</p>
+                    </div>
+                    <div class="practice5-feature">
+                        <h3>✅ Валидный код</h3>
+                        <p>HTML, CSS и JavaScript проходят валидацию</p>
+                    </div>
+                </div>
+                
+                <!-- Демо-область для тестирования скролла -->
+                <div class="scroll-test-area">
+                    <h3>Тестовая область для проверки кнопки "Наверх"</h3>
+                    <p>Прокрутите вниз, чтобы увидеть кнопку "Наверх"</p>
+                    <div class="scroll-content">
+                        <p>Текст для заполнения пространства...</p>
+                        <p>Текст для заполнения пространства...</p>
+                        <p>Текст для заполнения пространства...</p>
+                        <p>Текст для заполнения пространства...</p>
+                        <p>Текст для заполнения пространства...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Демо интерактивных элементов -->
         <section class="interactive-demo">
             <div class="container">
@@ -395,38 +451,12 @@
         </div>
     </footer>
 
-    <script>
-        // Скрипт для адаптивного меню
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navList = document.querySelector('.nav__list');
-            
-            menuToggle.addEventListener('click', function() {
-                navList.classList.toggle('nav__list--mobile');
-                menuToggle.classList.toggle('menu-toggle--active');
-            });
-            
-            // Закрытие меню при клике на ссылку
-            const navLinks = document.querySelectorAll('.nav__link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (navList.classList.contains('nav__list--mobile')) {
-                        navList.classList.remove('nav__list--mobile');
-                        menuToggle.classList.remove('menu-toggle--active');
-                    }
-                });
-            });
-            
-            // Изменение цвета шапки при скролле
-            const header = document.querySelector('.header');
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    header.classList.add('header--scrolled');
-                } else {
-                    header.classList.remove('header--scrolled');
-                }
-            });
-        });
-    </script>
+    <!-- === КНОПКА "НАТЕХ" (практика 5) === -->
+    <button class="scroll-top" id="scrollTop" aria-label="Наверх">
+        ↑
+    </button>
+
+    <!-- === СКРИПТЫ === -->
+    <script src="scripts/menu.js"></script>
 </body>
 </html>

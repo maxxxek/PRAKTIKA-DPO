@@ -1,12 +1,6 @@
-/* ===== Практическое занятие 4: Адаптивная вёрстка ===== */
-/* ===== Сброс стилей ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ===== Практическое занятие 4: Адаптивная вёрстка + Практика 5 ===== */
 
-/* ===== CSS-переменные ===== */
+/* ===== CSS-переменные (дополненные для практики 5) ===== */
 :root {
     /* Цвета */
     --primary-color: #2c5530;
@@ -57,16 +51,30 @@
     --container-md: 768px;
     --container-lg: 1024px;
     --container-xl: 1200px;
+    
+    /* Шрифты для практики 5 */
+    --font-roboto: 'Roboto', 'Inter', system-ui, sans-serif;
 }
 
 /* ===== Базовые стили ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .page {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-size: 16px;
+    font-family: var(--font-roboto);
+    font-size: 16px; /* Минимум для Material Design */
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--bg-white);
     scroll-behavior: smooth;
+}
+
+body {
+    font-size: 17px; /* iOS рекомендация для практики 5 */
+    overflow-x: hidden; /* Предотвращаем горизонтальный скролл */
 }
 
 .page *:focus-visible {
@@ -84,48 +92,26 @@
 
 /* ===== Анимации ===== */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.05);
-    }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== ШАПКА ===== */
+/* ===== ШАПКА (обновленная для практики 5) ===== */
 .header {
     background-color: var(--bg-white);
     border-bottom: 1px solid var(--border-color);
@@ -157,6 +143,7 @@
     font-weight: 700;
     font-size: 1.5rem;
     transition: var(--transition-base);
+    min-height: 44px; /* Touch-friendly для практики 5 */
 }
 
 .logo:hover {
@@ -168,7 +155,7 @@
     width: auto;
 }
 
-/* Навигация */
+/* Основная навигация (адаптивная для практики 5) */
 .nav__list {
     display: flex;
     gap: var(--spacing-md);
@@ -183,6 +170,10 @@
     border-radius: var(--radius-md);
     transition: var(--transition-base);
     position: relative;
+    min-height: 44px; /* Touch-friendly для практики 5 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav__link--active {
@@ -194,6 +185,10 @@
     color: var(--primary-color);
     background-color: var(--bg-light);
     transform: translateY(-1px);
+}
+
+.nav__link:active {
+    transform: scale(0.98); /* Feedback при нажатии для практики 5 */
 }
 
 .nav__link:focus {
@@ -211,10 +206,12 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 44px; /* Увеличил для практики 5 (было 40px) */
+    height: 44px; /* Увеличил для практики 5 (было 40px) */
     border-radius: 50%;
     transition: var(--transition-base);
+    min-width: 44px; /* Touch-friendly для практики 5 */
+    min-height: 44px;
 }
 
 .header-icons__link:hover {
@@ -226,9 +223,18 @@
     height: 20px;
 }
 
-/* Кнопка меню для мобильных */
+/* Кнопка CTA в шапке (НОВОЕ для практики 5) */
+.header__cta {
+    min-width: 120px;
+    min-height: 44px;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-left: var(--spacing-md);
+}
+
+/* Гамбургер-кнопка (практика 5) */
 .menu-toggle {
-    display: none;
+    display: none; /* По умолчанию скрыта на десктопе */
     flex-direction: column;
     gap: 4px;
     background: none;
@@ -236,13 +242,31 @@
     cursor: pointer;
     padding: var(--spacing-sm);
     z-index: 1001;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu-toggle__line {
     width: 24px;
-    height: 2px;
+    height: 3px;
     background-color: var(--text-dark);
     transition: var(--transition-base);
+    border-radius: 2px;
+}
+
+/* Состояние активного гамбургера */
+.menu-toggle.active .menu-toggle__line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active .menu-toggle__line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .menu-toggle__line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* ===== НАВИГАЦИЯ ПО ЯКОРЯМ ===== */
@@ -270,6 +294,9 @@
     border-radius: var(--radius-full);
     transition: var(--transition-base);
     opacity: 0.9;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
 }
 
 .anchor-nav__link:hover {
@@ -278,7 +305,7 @@
     transform: translateY(-2px);
 }
 
-/* ===== КНОПКИ ===== */
+/* ===== КНОПКИ (обновленные для практики 5) ===== */
 .button {
     display: inline-flex;
     align-items: center;
@@ -296,6 +323,8 @@
     cursor: pointer;
     transition: var(--transition-base);
     user-select: none;
+    min-height: 44px; /* Touch-friendly для практики 5 */
+    min-width: 44px;
 }
 
 .button:hover {
@@ -364,6 +393,8 @@
 
 .hero__button {
     animation: fadeIn 0.6s ease-out 0.6s both;
+    min-height: 56px;
+    padding: var(--spacing-md) var(--spacing-xl);
 }
 
 .hero__image {
@@ -660,6 +691,88 @@
     border-radius: var(--radius-xl);
 }
 
+/* ===== НОВАЯ СЕКЦИЯ: Практика 5 демо ===== */
+.practice5-demo {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--bg-light);
+}
+
+.practice5-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.practice5-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-xl);
+    font-size: 1.125rem;
+}
+
+.practice5-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xxl);
+}
+
+.practice5-feature {
+    padding: var(--spacing-lg);
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: var(--transition-base);
+}
+
+.practice5-feature:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.practice5-feature h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.scroll-test-area {
+    padding: var(--spacing-xl);
+    background-color: var(--bg-white);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--primary-color);
+}
+
+.scroll-test-area h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.scroll-test-area p {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-light);
+}
+
+.scroll-content {
+    max-height: 300px;
+    overflow-y: auto;
+    padding: var(--spacing-md);
+    background-color: var(--bg-light);
+    border-radius: var(--radius-md);
+}
+
+.scroll-content p {
+    padding: var(--spacing-md);
+    background-color: var(--bg-white);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+    text-align: left;
+}
+
 /* ===== ФОРМЫ ===== */
 .form {
     display: flex;
@@ -674,6 +787,7 @@
     font-family: inherit;
     font-size: 1rem;
     transition: var(--transition-base);
+    min-height: 44px; /* Touch-friendly для практики 5 */
 }
 
 .form__input:focus {
@@ -684,6 +798,7 @@
 
 .form__button {
     white-space: nowrap;
+    min-height: 44px; /* Touch-friendly для практики 5 */
 }
 
 /* ===== ДЕМО ИНТЕРАКТИВНЫХ ЭЛЕМЕНТОВ ===== */
@@ -712,6 +827,10 @@
     border: 2px solid var(--border-color);
     border-radius: var(--radius-md);
     transition: var(--transition-base);
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .interactive-card {
@@ -774,6 +893,9 @@
     color: #adb5bd;
     text-decoration: none;
     transition: var(--transition-fast);
+    min-height: 28px;
+    display: flex;
+    align-items: center;
 }
 
 .footer-column__link:hover {
@@ -808,8 +930,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 44px; /* Увеличил для практики 5 */
+    height: 44px; /* Увеличил для практики 5 */
     background-color: var(--border-dark);
     border-radius: 50%;
     transition: var(--transition-base);
@@ -825,7 +947,63 @@
     height: 20px;
 }
 
-/* ===== МЕДИАЗАПРОСЫ (DESKTOP FIRST) ===== */
+/* ===== КНОПКА "НАТЕХ" (практика 5) ===== */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-base);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 56px;
+    min-height: 56px;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.scroll-top:active {
+    transform: scale(0.95) translateY(0);
+}
+
+/* Затемнение фона при открытом меню (практика 5) */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+.nav-overlay.active {
+    display: block;
+}
+
+/* ===== МЕДИАЗАПРОСЫ (Desktop First) с дополнениями для практики 5 ===== */
 
 /* Breakpoint 1: Ноутбуки (меньше 1200px) */
 @media (max-width: 1199px) {
@@ -891,48 +1069,45 @@
     .footer__grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .practice5-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* Breakpoint 2: Планшеты (меньше 992px) */
+/* Breakpoint 2: Планшеты (меньше 992px) - ПРАКТИКА 5: Адаптивное меню */
 @media (max-width: 991px) {
     .container {
         max-width: var(--container-md);
     }
     
-    /* Адаптивное меню */
+    /* Адаптивное меню (практика 5) */
     .menu-toggle {
-        display: flex;
+        display: flex; /* Показываем гамбургер на планшетах */
     }
     
-    .menu-toggle--active .menu-toggle__line:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    
-    .menu-toggle--active .menu-toggle__line:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .menu-toggle--active .menu-toggle__line:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-    
-    .nav__list {
+    /* Основная навигация (скрыта по умолчанию на мобильных) */
+    .nav {
         position: fixed;
         top: 0;
         right: -100%;
-        height: 100vh;
         width: 300px;
+        height: 100vh;
         background-color: var(--bg-white);
-        flex-direction: column;
-        gap: 0;
-        padding: var(--spacing-xxl) var(--spacing-xl);
-        box-shadow: var(--shadow-lg);
-        transition: right var(--transition-base);
         z-index: 1000;
+        transition: right 0.4s ease;
+        box-shadow: var(--shadow-lg);
+        padding: 80px var(--spacing-xl) var(--spacing-xl);
+        overflow-y: auto;
     }
     
-    .nav__list--mobile {
+    .nav.active {
         right: 0;
+    }
+    
+    .nav__list {
+        flex-direction: column;
+        gap: 0;
     }
     
     .nav__item {
@@ -941,9 +1116,24 @@
     
     .nav__link {
         display: block;
-        padding: var(--spacing-md);
-        border-radius: 0;
+        width: 100%;
+        padding: var(--spacing-lg) 0;
+        font-size: 18px; /* Увеличиваем для мобильных */
         border-bottom: 1px solid var(--border-color);
+        border-radius: 0;
+        text-align: left;
+        justify-content: flex-start;
+    }
+    
+    .nav__link:hover,
+    .nav__link--active {
+        background-color: transparent;
+        color: var(--primary-color);
+        padding-left: var(--spacing-md);
+    }
+    
+    .header__cta {
+        display: none; /* Скрываем CTA кнопку на планшетах */
     }
     
     .hero__title {
@@ -985,7 +1175,7 @@
     }
     
     .anchor-nav {
-        display: none;
+        display: none; /* Скрываем дополнительную навигацию на планшетах */
     }
     
     .demo-grid {
@@ -1002,6 +1192,18 @@
     .footer-column--newsletter .form {
         max-width: 300px;
         margin: 0 auto;
+    }
+    
+    .practice5-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .scroll-top {
+        width: 52px;
+        height: 52px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 22px;
     }
 }
 
@@ -1041,7 +1243,8 @@
     .popular-products__title,
     .club__title,
     .about__title,
-    .demo-title {
+    .demo-title,
+    .practice5-title {
         font-size: 2rem;
     }
     
@@ -1082,6 +1285,10 @@
     .masonry-section {
         background-color: var(--bg-white);
     }
+    
+    .nav {
+        width: 280px; /* Уже для мобильных */
+    }
 }
 
 /* Breakpoint 4: Маленькие мобильные (меньше 576px) */
@@ -1104,7 +1311,8 @@
     .masonry-section__title,
     .popular-products__title,
     .club__title,
-    .about__title {
+    .about__title,
+    .practice5-title {
         font-size: 1.75rem;
     }
     
@@ -1133,8 +1341,8 @@
         font-size: 0.95rem;
     }
     
-    .nav__list {
-        width: 100%;
+    .nav {
+        width: 100%; /* На всю ширину на маленьких экранах */
     }
     
     .footer__form {
@@ -1146,7 +1354,7 @@
         margin-bottom: var(--spacing-sm);
     }
     
-    /* Улучшаем доступность для маленьких экранов */
+    /* Улучшаем доступность для маленьких экранов (практика 5) */
     .button {
         min-height: 44px;
         min-width: 44px;
@@ -1156,6 +1364,10 @@
         min-height: 44px;
         display: flex;
         align-items: center;
+    }
+    
+    .practice5-subtitle {
+        font-size: 1rem;
     }
 }
 
@@ -1179,7 +1391,8 @@
     
     .features__title,
     .products__title,
-    .masonry-section__title {
+    .masonry-section__title,
+    .practice5-title {
         font-size: 1.5rem;
     }
     
@@ -1190,6 +1403,14 @@
     
     .feature {
         padding: var(--spacing-lg);
+    }
+    
+    .scroll-top {
+        width: 48px;
+        height: 48px;
+        bottom: 15px;
+        right: 15px;
+        font-size: 20px;
     }
 }
 
